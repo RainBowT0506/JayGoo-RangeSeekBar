@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.storage.CacheResetOnProcessCanceled.enabled
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -33,6 +35,25 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    packagingOptions {
+        exclude("META-INF/androidx.localbroadcastmanager_localbroadcastmanager.version")
+        exclude("META-INF/androidx.appcompat_appcompat.version")
+        exclude("META-INF/androidx.cursoradapter_cursoradapter.version")
+        exclude("META-INF/androidx.drawerlayout_drawerlayout.version")
+        exclude("META-INF/androidx.print_print.version")
+        exclude("META-INF/androidx.interpolator_interpolator.version")
+        exclude("META-INF/androidx.fragment_fragment.version")
+        exclude("META-INF/androidx.customview_customview.version")
+        exclude("META-INF/androidx.documentfile_documentfile.version")
+        exclude("META-INF/androidx.vectordrawable_vectordrawable.version")
+        exclude("META-INF/androidx.legacy_legacy-support-core-utils.version")
+        exclude("META-INF/androidx.loader_loader.version")
+        exclude("META-INF/androidx.viewpager_viewpager.version")
+        exclude("META-INF/androidx.vectordrawable_vectordrawable-animated.version")
+        exclude("META-INF/androidx.coordinatorlayout_coordinatorlayout.version")
+
+    }
 }
 
 dependencies {
@@ -45,4 +66,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation("com.github.Jay-Goo:RangeSeekBar:3.0.0") {
+        exclude("com.android.support", "support-compat")
+    }
 }

@@ -67,7 +67,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation("com.github.Jay-Goo:RangeSeekBar:3.0.0") {
+    implementation("com.github.Jay-Goo:RangeSeekBar:v3.0.0") {
         exclude("com.android.support", "support-compat")
     }
 }

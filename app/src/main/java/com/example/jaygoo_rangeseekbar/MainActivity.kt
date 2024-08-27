@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.viewpager.widget.ViewPager
+import com.example.jaygoo_rangeseekbar.fragments.MySeekBarFragment
 import com.example.jaygoo_rangeseekbar.fragments.RangeSeekBarFragment
 import com.example.jaygoo_rangeseekbar.fragments.SingleSeekBarFragment
 import com.example.jaygoo_rangeseekbar.fragments.StepsSeekBarFragment
@@ -28,26 +29,28 @@ class MainActivity : AppCompatActivity() {
         viewPager.setAdapter(object : FragmentPagerAdapter(supportFragmentManager) {
             override fun getItem(position: Int): Fragment {
                 return when (position) {
-                    0 -> RangeSeekBarFragment() // First tab: RangeSeekBarFragment
-                    1 -> SingleSeekBarFragment() // Second tab: SingleSeekBarFragment
-                    2 -> StepsSeekBarFragment() // Third tab: StepsSeekBarFragment
-                    3 -> VerticalSeekBarFragment() // Fourth tab: VerticalSeekBarFragment
+                    0 -> MySeekBarFragment()
+                    1 -> RangeSeekBarFragment() // First tab: RangeSeekBarFragment
+                    2 -> SingleSeekBarFragment() // Second tab: SingleSeekBarFragment
+                    3 -> StepsSeekBarFragment() // Third tab: StepsSeekBarFragment
+                    4 -> VerticalSeekBarFragment() // Fourth tab: VerticalSeekBarFragment
                     else -> RangeSeekBarFragment() // Default case, shouldn't happen
                 }
             }
 
             // Show 4 total pages.
             override fun getCount(): Int {
-                return 4
+                return 5
             }
 
             @Nullable
             override fun getPageTitle(position: Int): CharSequence? {
                 return when (position) {
-                    0 -> "Range SeekBar"
-                    1 -> "Single SeekBar"
-                    2 -> "Steps SeekBar"
-                    3 -> "Vertical SeekBar"
+                    0 -> "Custom SeekBar"
+                    1 -> "Range SeekBar"
+                    2 -> "Single SeekBar"
+                    3 -> "Steps SeekBar"
+                    4 -> "Vertical SeekBar"
                     else -> null
                 }
             }

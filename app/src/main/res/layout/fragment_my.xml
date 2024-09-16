@@ -15,7 +15,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:rsb_gravity="bottom"
         app:rsb_indicator_show_mode="alwaysHide"
-        app:rsb_min_interval="25"
+        app:rsb_min="0"
+        app:rsb_max="100"
         app:rsb_mode="single"
         app:rsb_progress_color="@color/progress_reached_color"
         app:rsb_progress_default_color="@color/progress_unreached_color"
@@ -36,6 +37,7 @@
         app:rsb_tick_mark_text_array="@array/tick_mark_array"
         app:rsb_tick_mark_text_color="@color/neutral_900"
         app:rsb_tick_mark_text_margin="@dimen/dp_15"
-        app:rsb_tick_mark_text_size="12sp"/>
+        app:rsb_tick_mark_text_size="12sp"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
